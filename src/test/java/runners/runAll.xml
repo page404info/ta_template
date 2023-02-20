@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="runAll">
+
+    <test name="originApi module">
+        <packages>
+            <package name="testcases.module.origin.api.*"/>
+        </packages>
+    </test>
+
+    <test name="originApi integration">
+        <classes>
+            <!--class name="testcases.integration.originapi_systemapi"/-->
+        </classes>
+    </test>
+
+</suite>

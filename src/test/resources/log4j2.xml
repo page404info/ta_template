@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5p [%c{10}:%L] - %m%n"/>
+        </Console>
+
+        <RollingFile name="File" fileName="logs/taProjectName-${date:yyyy-MM-dd}.log" append="true"
+                     filePattern="logs/app-${date:yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%c{10}:%L] - %m%n"/>
+            <SizeBasedTriggeringPolicy size="5 MB"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Console" level="info"/>
+            <AppenderRef ref="File" level="error"/>
+        </Root>
+    </Loggers>
+</Configuration>
